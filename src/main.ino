@@ -150,16 +150,14 @@ void ejecutarSecuenciaAutonoma() {
 
     case 1:
       // Reto 03: Parpadeo
-      // TODO 3.1: Actualiza currentState a STATE_BLINK y dibuja eye_blink:
-      // currentState = ...;
-      // drawEyeExpression(display, ...);
+     currentState = STATE_BLINK;
+      drawEyeExpression(display, eye_blink);
       break;
 
     case 2:
       // Reto 03: Mirada Izquierda
-      // TODO 3.2: Actualiza currentState a STATE_LOOK_LEFT y dibuja eye_look_left:
-      // currentState = ...;
-      // drawEyeExpression(display, ...);
+        currentState = STATE_LOOK_LEFT;
+      drawEyeExpression(display, eye_look_left);
       break;
 
     case 3:
