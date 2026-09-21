@@ -66,9 +66,7 @@ void debugEyesSerial() {
       case 'H':
       case 'h':
         // TODO 4.2: Conmuta el estado a STATE_HAPPY y renderiza eye_happy con drawEyeExpression():
-        // currentState = ...;
-        // drawEyeExpression(display, ...);
-        // Serial.println(F("[SERIAL DEBUG] Expresión cambiada a: FELIZ"));
+        currentState = STATE_HAPPY; drawEyeExpression(display, eye_happy); Serial.println(F("[SERIAL DEBUG] Expresión cambiada a: FELIZ"));
         break;
 
       case '3':
