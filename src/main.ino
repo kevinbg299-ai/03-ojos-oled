@@ -73,9 +73,9 @@ void debugEyesSerial() {
       case 'A':
       case 'a':
         // TODO 4.3: Conmuta el estado a STATE_ALERT y renderiza eye_alert con drawEyeExpression():
-        // currentState = ...;
-        // drawEyeExpression(display, ...);
-        // Serial.println(F("[SERIAL DEBUG] Expresión cambiada a: ALERTA"));
+          currentState = STATE_ALERT;
+        drawEyeExpression(display, eye_alert);
+        Serial.println(F("[SERIAL DEBUG] Expresión cambiada a: ALERTA"));
         break;
 
       case '4':
@@ -98,8 +98,9 @@ void debugEyesSerial() {
       case 'L':
       case 'l':
         // TODO 4.4: Conmuta el estado a STATE_LOOK_LEFT y renderiza eye_look_left:
-        // currentState = ...;
-        // drawEyeExpression(display, ...);
+          currentState = STATE_LOOK_LEFT;
+        drawEyeExpression(display, eye_look_left);
+        Serial.println(F("[SERIAL DEBUG] Expresión cambiada a: MIRADA IZQUIERDA"));
         break;
 
       case '7':
