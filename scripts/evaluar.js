@@ -108,9 +108,9 @@ async function run() {
   if (!logbootCont || !eyesCont || !mainCont) {
     r1Msg = 'Faltan archivos esenciales en src/ (logboot.h, eyes.h, main.ino).';
   } else if (!/runSystemPOST\s*\(/.test(activeCode)) {
-    r1Msg = 'main.ino no invoca activamente runSystemPOST() en setup(). Completa el TODO 1.1.';
+    r1Msg = 'main.ino no ejecuta el auto-diagnóstico POST durante el arranque. Completa el TODO 1.1.';
   } else if (!/eye_normal/.test(activeCode)) {
-    r1Msg = 'main.ino no renderiza activamente el bitmap eye_normal. Completa el TODO 1.2.';
+    r1Msg = 'main.ino no renderiza activamente el mapa de bits de la mirada base. Completa el TODO 1.2.';
   } else {
     r1Pass = true;
     puntaje += 1.0;
@@ -123,7 +123,7 @@ async function run() {
   if (!mainCont) {
     r2Msg = 'No se encontró main.ino.';
   } else if (!/eye_happy/.test(activeCode) || !/eye_alert/.test(activeCode)) {
-    r2Msg = 'Faltan llamadas activas a las expresiones eye_happy o eye_alert. Completa el TODO 2.1 y TODO 4.2.';
+    r2Msg = 'Faltan llamadas activas a las expresiones de felicidad o de alerta. Completa el TODO 2.1 y TODO 4.2.';
   } else {
     r2Pass = true;
     puntaje += 1.0;
@@ -136,7 +136,7 @@ async function run() {
   if (!mainCont) {
     r3Msg = 'No se encontró main.ino.';
   } else if (!/eye_blink/.test(activeCode) || (!/eye_look_left/.test(activeCode) && !/eye_look_right/.test(activeCode))) {
-    r3Msg = 'Faltan llamadas activas a eye_blink o miradas direccionales (eye_look_left / eye_look_right). Completa los TODOs del Reto 03.';
+    r3Msg = 'Faltan llamadas activas al parpadeo o a las miradas direccionales (izquierda / derecha). Completa los TODOs del Reto 03.';
   } else {
     r3Pass = true;
     puntaje += 1.5;
@@ -149,9 +149,9 @@ async function run() {
   if (!mainCont) {
     r4Msg = 'No se encontró main.ino.';
   } else if (!/millis\s*\(\)/.test(activeCode)) {
-    r4Msg = 'main.ino no utiliza temporización no bloqueante con millis().';
+    r4Msg = 'main.ino no utiliza temporización no bloqueante por tiempo transcurrido.';
   } else if (!/debugEyesSerial|Serial\.read/.test(activeCode)) {
-    r4Msg = 'main.ino no implementa la función de depuración interactiva por Serial.';
+    r4Msg = 'main.ino no implementa la función de depuración interactiva por el puerto serie.';
   } else {
     r4Pass = true;
     puntaje += 1.5;
