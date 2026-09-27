@@ -174,9 +174,8 @@ void ejecutarSecuenciaAutonoma() {
 
     case 5:
       // Reto 02: Expresión Feliz
-      // TODO 2.1: Actualiza currentState a STATE_HAPPY y dibuja eye_happy:
-      // currentState = ...;
-      // drawEyeExpression(display, ...);
+       currentState = STATE_HAPPY;
+      drawEyeExpression(display, eye_happy);
       break;
   }
 }
@@ -195,7 +194,7 @@ void setup() {
   }
 
   // TODO 1.1: Invoca la función obligatoria de auto-diagnóstico (Power-On Self-Test):
-  // runSystemPOST(display);
+   runSystemPOST(display);
 
   // Menú de ayuda por Serial Monitor
   Serial.println(F("\n======================================================="));
@@ -214,7 +213,7 @@ void setup() {
   Serial.println(F("=======================================================\n"));
 
   // TODO 1.2: Dibuja la expresión neutra base para arrancar (eye_normal):
-  // drawEyeExpression(display, eye_normal);
+   drawEyeExpression(display, eye_normal);
 
   previousMillis = millis();
 }
